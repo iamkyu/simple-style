@@ -4,7 +4,7 @@
 </div>
 <ul>
   {{ range .Paginator.Pages -}}
-  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</li>
+  <li><a href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a> - {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</li>
   {{ end -}}
 </ul>
 {{ template "_internal/pagination.html" . -}}

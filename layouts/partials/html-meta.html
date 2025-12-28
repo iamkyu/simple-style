@@ -13,3 +13,6 @@
 {{ with .Site.Params.referrer -}}
 <meta name="referrer" content="{{ . }}">
 {{ end -}}
+{{ if .Params.externalLink -}}
+<meta http-equiv="refresh" content="0; url={{ .Params.externalLink }}">
+{{ end -}}
